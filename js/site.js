@@ -1,55 +1,24 @@
-var inputs = ["inpStar1","inpStar2","inpStar3","inpStar4","inpStar5","inpStar6","inpStar7","inpStar8","inpStar9","inpStar10","v2","target"];
-
 function setAll() {
-  inputs.forEach(input => {
-    if (input.includes("inpStar")) {
-      document.getElementById(input).value = document.getElementById("setAll").value;
-    }
-    
-  });
-
-    }
+  getStarFields().forEach(field => {
+    field.value = document.getElementById("setAll").value
+  })
+}
 
 function calculate() {
-  var isValid = true;
-  inputs.every(input => {
-    if (document.getElementById(input).value <= 0) {
-      document.getElementById(input).select();
-      document.getElementById(input).classList.add("red");
-      isValid = false;
-      return;
-    }
-    isValid = true;
-    return true;
-  });
-  if (!isValid) { return; }
-
-  var stars = [
-      document.getElementById("inpStar1").value,
-      document.getElementById("inpStar2").value,
-      document.getElementById("inpStar3").value,
-      document.getElementById("inpStar4").value,
-      document.getElementById("inpStar5").value,
-      document.getElementById("inpStar6").value,
-      document.getElementById("inpStar7").value,
-      document.getElementById("inpStar8").value,
-      document.getElementById("inpStar9").value,
-      document.getElementById("inpStar10").value,
-  ];
-
+  if (!allFieldsAreValid()) { return; }
 
   var desired = document.getElementById("target").value;
 
   var gsAmount = 0;
   var magAmount = 0;
   var fragmentAmount = 0;
-  var scrapyardMul = scrapyardModifier();
+  var scrapyardMul = getScrapyardModifier();
 
-  stars.forEach((star) => {
-      for (let index = Number(star); index < Number(desired); index++) {
-          gsAmount += gsCost(index, scrapyardMul);
-          magAmount += magnetCost(index, scrapyardMul);
-          fragmentAmount += fragmentCost(index, scrapyardMul);
+  collectStarValues().forEach((starValue) => {
+      for (let index = Number(starValue); index < Number(desired); index++) {
+          gsAmount += getNumOfGoldenScrap(index, scrapyardMul);
+          magAmount += getNumOfMagnets(index, scrapyardMul);
+          fragmentAmount += getNumOfFragments(index, scrapyardMul);
       }
   });
 
@@ -58,13 +27,66 @@ function calculate() {
   document.getElementById("fragment").innerHTML = fragmentAmount.toLocaleString();
 }
 
+function allFieldsAreValid() {
+  [
+    "inpStar1",
+    "inpStar2",
+    "inpStar3",
+    "inpStar4",
+    "inpStar5",
+    "inpStar6",
+    "inpStar7",
+    "inpStar8",
+    "inpStar9",
+    "inpStar10",
+    "v2",
+    "target"
+  ].every(input => {
+    if (document.getElementById(input).value <= 0) {
+      document.getElementById(input).select();
+      document.getElementById(input).classList.add("red");
+      return false;
+    }
+  });
+  return true
+}
+
 function isNumber(event) {
   if (!String.fromCharCode(event.which).match(/[0-9]/)) {
       event.preventDefault();
   }
 }
 
-function gsCost(starLevel, scrapyardMul) {
+function collectStarValues() {
+  var values = [];
+  getStarFields().forEach(field => {
+    values.push(field.value)
+  });
+  return values;
+}
+
+function getStarFields() {
+  var fields = []
+  for(var i=1; i<=10; i++) {
+    fields.push(document.getElementById("inpStar"+i))
+  }
+  return fields;
+}
+
+function getScrapyardModifier() {
+    var modifier;
+    var level = document.getElementById("v2").value;
+    if (level > 200) {
+        modifier = (level - 200) * 4 + 300;
+    } else {
+        modifier = level;
+        if (level > 100)
+            modifier = (level - 100) * 2 + 100;
+    }
+    return modifier - 1;
+}
+
+function getNumOfGoldenScrap(starLevel, scrapyardMul) {
   var cost = 100000 * (starLevel - 10) + 250000; //adjust for first 10 stars
   if (starLevel >= 20) cost *= 1.3;
   if (starLevel >= 30) cost *= 1.3;
@@ -91,24 +113,7 @@ function gsCost(starLevel, scrapyardMul) {
   return Math.floor((cost * 100) / (scrapyardMul + 100));
 }
 
-function scrapyardModifier()
-  {
-    var modifier;
-    var level = document.getElementById("v2").value;
-    if (level > 200)
-    {
-        modifier = (level - 200) * 4 + 300;
-    }
-    else
-    {
-        modifier = level;
-        if (level > 100)
-            modifier = (level - 100) * 2 + 100;
-    }
-    return modifier - 1;
-}
-
-function magnetCost(starLevel, scrapyardMul) {
+function getNumOfMagnets(starLevel, scrapyardMul) {
   var cost = 250 * (starLevel - 10) + 1000; //adjust for first 10 stars
   if (starLevel >= 12) cost *= 0.98;
   if (starLevel >= 13) cost *= 0.98;
@@ -199,7 +204,7 @@ function magnetCost(starLevel, scrapyardMul) {
   return Math.floor(cost * 100 / (scrapyardMul + 100));
 }
 
-function fragmentCost(starLevel, scrapyardMul) {
+function getNumOfFragments(starLevel, scrapyardMul) {
   var cost = 4 + (starLevel - 10); //adjust for first 10 stars
   if (starLevel >= 60) cost *= 1.05;
   if (starLevel >= 70) cost *= 1.05;
