@@ -65,7 +65,7 @@ body {
     color : #117c3b
 }
 
-#credits {
+#pages > div {
     display:none;
 }
 
