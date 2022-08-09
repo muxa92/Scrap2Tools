@@ -3,130 +3,195 @@
         <title>StarCalc</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="css/site-min.css" media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/site.css" media="screen,projection"/>
     </head>
 
     <body>
-        <h1 class="text-center">Star Levels</h1>
-        <div class="text-center">Set all Stars: <input id="setAll" type="number" placeholder="Enter level" onchange="setAll()"></div>
-        <div class="d-grid gap-3">
-            <div class="container">
-                <div class="row d-flex justify-content-evenly">
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar1" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <img src="/imgs/Icon_Scrap_Clicker_2.webp" width="40" height="40">
+                Scrap II Tools
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="#" id="starCalcLink">Star Calculator</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" id="levelCalcLink">Level Calculator</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" id="creditsLink">Credits</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="pages">
+            <div id="starCalc">
+                <h1 class="text-center">Star Levels</h1>
+                <div class="text-center">Set all Stars: <input id="setAll" type="number" placeholder="Enter level" onchange="setAll()"></div>
+                <div class="d-grid gap-3">
+                    <div class="container">
+                        <div class="row d-flex justify-content-evenly">
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar1" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar2" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-evenly">
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar3" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar4" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar5" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-evenly">
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar6" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar7" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar8" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-evenly">
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar9" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                            <div class="col starContainer">
+                                <label class="text-center">
+                                    <img class="starIcon" alt="Star">
+                                    <input class="starInput centered" id="inpStar10" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col starContainer">
+                    <div class="input-group-sm">
                         <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar2" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
+                            <span class="h3 w-50">Scrapyard V2 Level:</span>
+                            <input class="w-25" id="v2" type="number" placeholder="Enter level">
                         </label>
+
+                        <label class="text-center">
+                            <span class="h3 w-50">Target Star Level:</span>
+                            <input class="w-25" id="target" type="number" placeholder="Enter level">
+                        </label>
+                        <div class="text-center" style="padding: 10px;">
+                            <button class="btn btn-primary" onclick="calculate()" >Submit</button>
+                        </div>
                     </div>
-                </div>
-                <div class="row d-flex justify-content-evenly">
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar3" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
-                    </div>
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar4" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
-                    </div>
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar5" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-evenly">
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar6" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
-                    </div>
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar7" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
-                    </div>
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar8" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-evenly">
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar9" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
-                    </div>
-                    <div class="col starContainer">
-                        <label class="text-center">
-                            <img class="starIcon" alt="Star">
-                            <input class="starInput centered" id="inpStar10" type="text" placeholder="99999" maxlength="5" onkeypress="isNumber(event)">
-                        </label>
+
+                    <div class="container">
+                        <div class="flex-column">
+                            <div class="flex-row">
+                                <img class="gsIcon" alt="Golden Scrap">
+                                <label class="text-center">
+                                    <span class="h3 dispInput" id="gs">0</span>
+                                </label>
+                            </div>
+                            <div class="flex-row">
+                                <img class="magIcon" alt="Magnets">
+                                <label class="text-center">
+                                    <span class="h3 dispInput" id="mag">0</span>
+                                </label>
+                            </div>
+                            <div class="flex-row">
+                                <img class="fragmentIcon" alt="Fragments">
+                                <label class="text-center">
+                                    <span class="h3 dispInput" id="fragment">0</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="input-group-sm">
-                <label class="text-center">
-                    <span class="h3 w-50">Scrapyard V2 Level:</span>
-                    <input class="w-25" id="v2" type="number" placeholder="Enter level">
-                </label>
 
-                <label class="text-center">
-                    <span class="h3 w-50">Target Star Level:</span>
-                    <input class="w-25" id="target" type="number" placeholder="Enter level">
-                </label>
-                <div class="text-center" style="padding: 10px;">
-                    <button class="btn btn-primary" onclick="calculate()" >Submit</button>
-                </div>
+            <div id="levelCalc">
+                test
             </div>
 
-            <div class="container">
-                <div class="flex-column">
-                    <div class="flex-row">
-                        <img class="gsIcon" alt="Golden Scrap">
-                        <label class="text-center">
-                            <span class="h3 dispInput" id="gs">0</span>
-                        </label>
+            <div id="credits">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Calculators</h1>
+                        <p class="lead">
+                            The initial idea of Star Calculator and first implementation by <a href="https://github.com/jugh3ad/StarCalc">Jugh3ad</a><br>
+                            The formula for Level Calculator created by dwyer
+                        </p>
                     </div>
-                    <div class="flex-row">
-                        <img class="magIcon" alt="Magnets">
-                        <label class="text-center">
-                            <span class="h3 dispInput" id="mag">0</span>
-                        </label>
+                </div>
+
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Refactoring & redesign</h1>
+                        <p class="lead">Forked, refactored and made better by <a href="https://github.com/muxa92/StarCalc">muxa92</a></p>
                     </div>
-                    <div class="flex-row">
-                        <img class="fragmentIcon" alt="Fragments">
-                        <label class="text-center">
-                            <span class="h3 dispInput" id="fragment">0</span>
-                        </label>
+                </div>
+
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Images</h1>
+                        <p class="lead">Images courtesy of <a href="https://official-scrap-2.fandom.com/">Official Scrap 2 Wiki | Fandom</a></p>
+                    </div>
+                </div>
+
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Technologies used</h1>
+                        <p class="lead">This project is written with plain JavaScript and <a href="https://jquery.com/">jQuery</a>.
+                            Design is powered by <a href="https://getbootstrap.com/">BootStrap</a><br>
+                            So, you have all chances to come in and develop some more features without any knowledge of complicate frameworks :)<br>
+                            Let do it better together!
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div style="color:white; text-align:center;">Designed with 🤍 by ScrapObsession's very own Dom</div>
-        <div style="color:white; text-align:center;">Initial created, Meticulous coded and tested by Jugh3ad</div>
-        <div style="color:white; text-align:center;">Forked, refactored and made better by Muxa92</div>
-        <div style="color:white; text-align:center;">New ideas from RussianOnly - Team</div>
-        <div style="color:white; text-align:center;">Images courtesy of <a href="https://official-scrap-2.fandom.com/">Official Scrap 2 Wiki | Fandom</a></div>
-        <div style="color:white; text-align:center;">Issues/Suggestions? <a href="https://github.com/jugh3ad/StarCalc">Submit a Pull Request or Issue</a></div>
-
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="js/site-min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/starcalc.js"></script>
     </body>
 </html>

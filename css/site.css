@@ -45,11 +45,28 @@
     transform: translate(-50%, -50%);
 }
 body {
-background-color: #a1a1a1;
-min-width: 375px;
-max-width: 550px;
-margin: auto;
+    background-color: #d5d5d5;
+    margin: auto;
+}
 
+.navbar {
+    background: #9b9b9b;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.navbar li:hover {
+    background: #adadad;
+}
+
+.nav-link:hover {
+    color : #117c3b
+}
+
+#credits {
+    display:none;
 }
 
 .red::placeholder{
