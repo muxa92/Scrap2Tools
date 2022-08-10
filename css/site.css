@@ -69,6 +69,11 @@ body {
     display:none;
 }
 
+#mergesCalc .container .row {
+    padding: 5px 0;
+    font-weight: bold;
+}
+
 .red::placeholder{
     color: red;
 }

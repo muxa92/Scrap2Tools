@@ -4,8 +4,8 @@ $("#creditsLink").on("click", function() {
 $("#starCalcLink").on("click", function() {
     openPage(this, "starCalc")
 })
-$("#levelCalcLink").on("click", function() {
-    openPage(this, "levelCalc")
+$("#mergesCalcLink").on("click", function() {
+    openPage(this, "mergesCalc")
 })
 
 function openPage(link, id) {

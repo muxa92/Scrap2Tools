@@ -23,7 +23,7 @@
                         <a class="nav-link" href="#" id="starCalcLink">Star Calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="levelCalcLink">Level Calculator</a>
+                        <a class="nav-link" href="#" id="mergesCalcLink">Merges Calculator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="creditsLink">Credits</a>
@@ -34,7 +34,8 @@
 
         <div id="pages">
             <div id="starCalc">
-                <h1 class="text-center">Star Levels</h1>
+                <h1 class="text-center">Star Calculator</h1>
+                <p class="text-center">There you can calculate, how many resources you need to get a target star level</p>
                 <div class="text-center">Set all Stars: <input id="setAll" type="number" placeholder="Enter level" onchange="setAll()"></div>
                 <div class="d-grid gap-3">
                     <div class="container">
@@ -107,12 +108,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="input-group-sm">
+                    <div class="input-group-sm text-center">
                         <label class="text-center">
                             <span class="h3 w-50">Scrapyard V2 Level:</span>
                             <input class="w-25" id="v2" type="number" placeholder="Enter level">
                         </label>
-
+                        <br>
                         <label class="text-center">
                             <span class="h3 w-50">Target Star Level:</span>
                             <input class="w-25" id="target" type="number" placeholder="Enter level">
@@ -122,7 +123,7 @@
                         </div>
                     </div>
 
-                    <div class="container">
+                    <div class="container text-center">
                         <div class="flex-column">
                             <div class="flex-row">
                                 <img class="gsIcon" alt="Golden Scrap">
@@ -147,8 +148,48 @@
                 </div>
             </div>
 
-            <div id="levelCalc">
-                In work...
+            <div id="mergesCalc">
+                <h1 class="text-center">Merges Calculator</h1>
+
+                <div class="container">
+                    <div class="row align-items-center">
+                            <div class="col text-end">
+                                <img src="imgs/Scrapyard_v2.webp" width="40">
+                                Scrapyard v5 level
+                            </div>
+                            <div class="col"><input id="scrapyardv5" type="number" placeholder="Enter level"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            <img src="imgs/Faster_level_up.webp" width="40">
+                            Barrel Mastery 11th upgrade level
+                        </div>
+                        <div class="col">
+                            <input id="bm11" type="number" placeholder="Enter level">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            <img src="imgs/GS.webp" width="40">
+                            Average of golden scrap positions
+                        </div>
+                        <div class="col"><input id="gsAverage" type="number" placeholder="Enter level"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            <img src="imgs/SC2_betterbarrelsII.webp" width="40">
+                            Basic level
+                        </div>
+                        <div class="col"><input id="basicLvl" type="number" placeholder="Enter level"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            <img src="imgs/SC2_betterbarrelsII.webp" width="40">
+                            Required level
+                        </div>
+                        <div class="col"><input id="requiredLvl" type="number" placeholder="Enter level"></div>
+                    </div>
+                </div>
             </div>
 
             <div id="credits">
