@@ -4,7 +4,7 @@ function setAll() {
   })
 }
 
-function calculate() {
+function calculateStars() {
   if (!allFieldsAreValid()) { return; }
 
   var desired = document.getElementById("target").value;
