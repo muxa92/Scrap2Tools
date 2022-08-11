@@ -1,4 +1,4 @@
-# jugh3ad.github.io/StarCalc/
+# Scrap 2 Tools
 
 A companion app/website for the merging game Scrap Clicker 2.
 
@@ -12,4 +12,6 @@ One calculated, it will provide the needed amounts of:
 * Magnets
 * Star Fragments
 
-To see it in action: https://jugh3ad.github.io/StarCalc/
+Also, this tool have a posibility to calculate amount of merges to reach some level 
+
+To see it in action: https://muxa92.github.io/Scrap2Tools/
